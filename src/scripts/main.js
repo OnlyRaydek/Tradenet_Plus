@@ -1,10 +1,58 @@
 import $ from 'jquery';
 import 'jquery-validation';
-import { userData, switchHendl } from './helpFunctions';
 import countryTelephoneCode from 'country-telephone-code';
 
-// getting the country of visitor and phone code,
-// setting to the default form input values
+const userData = {
+  name: '',
+  mail: '',
+  phone: null,
+  country: '',
+  answers: {
+    'Question-1': '',
+    'Question-2': '',
+    'Question-3': '',
+    'Question-4': '',
+  },
+};
+
+function slideHandler(page, choiseNum) {
+  const { answers } = userData;
+
+  if (page === 4) {
+    answers[`Question-${page}`] = $(`#choise${choiseNum}`).data();
+    $('.data__questions').hide();
+    $('#solutions').show();
+  };
+
+  answers[`Question-${page}`] = $(`#choise${choiseNum}`).data();
+
+  $(`#quiz_${page}`).hide();
+  $(`#quiz_${page}`).off();
+  $(`#page${page + 1}`).addClass('active');
+  $(`#line${page}`).addClass('active');
+  $(`#quiz_${page + 1}`).show();
+};
+
+function switchHendl(id, quiz) {
+  const choisesNum = [];
+  let count = 1 + (quiz * 4 - 4);
+
+  for (let i = 0; i < 4; i++) {
+    choisesNum.push(count);
+    count++;
+  }
+
+  if (id === `choise${choisesNum[0]}`) {
+    return slideHandler(quiz, choisesNum[0]);
+  } else if (id === `choise${choisesNum[1]}`) {
+    return slideHandler(quiz, choisesNum[1]);
+  } else if (id === `choise${choisesNum[2]}`) {
+    return slideHandler(quiz, choisesNum[2]);
+  } else if (id === `choise${choisesNum[3]}`) {
+    return slideHandler(quiz, choisesNum[3]);
+  }
+};
+
 $.getJSON('http://ip-api.com/json', function(response) {
   $('#default').text(response.country);
   $('#default').val(response.country);
@@ -14,7 +62,6 @@ $.getJSON('http://ip-api.com/json', function(response) {
   $('#phone').val(`${phoneCode}`);
 });
 
-// validating the form data
 $(function() {
   $('#userform').validate({
     rules: {
@@ -44,7 +91,6 @@ $(function() {
       agree: 'Confirm your input',
     },
     submitHandler: function(form, event) {
-    // do other things for a valid form
       event.isDefaultPrevented();
 
       userData.name = $('#name').val();
@@ -60,7 +106,6 @@ $(function() {
   });
 });
 
-// page after form
 $('.access__quiz_button').on('click', function() {
   $('.data__access').hide();
   $('.data__questions').show();
@@ -69,7 +114,6 @@ $('.access__quiz_button').on('click', function() {
   $('.access__quiz_button').off();
 });
 
-// quiz answers logic
 $('#quiz_1').on('click', function(event) {
   switchHendl(event.target.id, 1);
 });
