@@ -1,0 +1,21 @@
+@import "./components/header.scss";
+@import "./components/info.scss";
+@import "./components/slide.scss";
+@import "./components/data.scss";
+@import "./components/footer.scss";
+@import "./components/solutions.scss";
+@import "./components/access.scss";
+@import "./components/form.scss";
+@import "./components/question.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.about {
+  background-color: #fff0e5;
+}

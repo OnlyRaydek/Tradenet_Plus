@@ -1,0 +1,134 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  padding: 20px 25px;
+  width: 673px;
+  height: 312px;
+
+  background: #fff;
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+  &__title {
+    color: #f80303;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px ;
+    justify-content: space-between;
+  }
+
+  &__input {
+    margin-bottom: 20px;
+    padding-left: 17px;
+    width: 300px;
+    height: 38px;
+    font-size: 12px;
+    line-height: 23px;
+    border: 1px solid #dadada;
+    border-radius: 10px;
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+
+  &__agree {
+    display: block;
+    margin: 0;
+    width: 583px;
+    color: #ababab;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .form__agree-black {
+    color: black;
+  }
+
+  &__check_container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__check {
+    margin: 0 22px 0 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__button {
+    align-self: center;
+    width: 200px;
+    height: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: white;
+    background: #ff844f;
+    border: none;
+    border-radius: 10px;
+  }
+
+  &__button:active,
+  &__button:focus {
+    outline: none;
+  }
+
+  &__button:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+
+  &__error {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  @media screen and (max-width: 1140px) {
+    width: auto;
+    height: auto;
+    padding: 20px;
+    transform: none;
+
+    &__container {
+      padding: 26px 0 0;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    &__agree {
+      width: 100%;
+    }
+
+    &__input {
+      width: 250px;
+      height: 32px;
+      margin-bottom: 12px;
+    }
+
+    .form__agree-black {
+      color: green;
+    }
+  }
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+}

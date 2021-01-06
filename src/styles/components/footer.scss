@@ -1,0 +1,220 @@
+.footer {
+  height: 706px;
+  padding: 60px calc(50% - 555px);
+  background-color: #394046;
+
+  &__block_1 {
+    border-bottom: 1px solid #fff;
+  }
+
+  &__block_2 {
+    padding: 48px 0;
+  }
+
+  &__links_wrapper {
+    display: flex;
+    margin-bottom: 19px;
+  }
+
+  &__links_block {
+    display: flex;
+    flex-direction: column;
+    margin-right: 45px;
+  }
+
+  &__link_title {
+    margin-bottom: 8px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: #fff;
+  }
+
+  &__link {
+    margin-bottom: 4px;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #fff;
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+
+  &__slink {
+    margin-right: 15px;
+    text-decoration: none;
+  }
+
+  &__slink svg:hover {
+    transform: scale(1.2);
+  }
+
+  &__pay {
+    margin-left: auto;
+    margin-bottom: 28px;
+    width: 390px;
+  }
+
+  &__text {
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 155%;
+    color: #fff;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__privacy {
+    margin-left: 20px;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #fff;
+  }
+
+  &__privacy:hover {
+    text-decoration: underline;
+  }
+
+  &__organizer {
+    display: none;
+  }
+
+  &__organizer_text {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #fff;
+  }
+
+  // blocks for mobile version
+  #courses,
+  #services,
+  #our_programs_title {
+    display: none;
+  }
+
+  @media screen and (max-width: 1140px) {
+    position: relative;
+    height: auto;
+    padding: 111px 15px 22px;
+
+    &__links_wrapper {
+      margin: 0;
+      display: grid;
+      grid-template-areas: "courses services"
+        "packages about"
+        "contacts organizer";
+    }
+
+    #about {
+      grid-area: about;
+      margin-bottom: 20px;
+    }
+
+    #courses {
+      grid-area: courses;
+      margin-bottom: 20px;
+    }
+
+    #services {
+      grid-area: services;
+    }
+
+    #our_programs {
+      grid-area: packages;
+    }
+
+    #contacts {
+      grid-area: contacts;
+      margin-bottom: 20px;
+    }
+
+    #organizer {
+      grid-area: organizer;
+    }
+
+    &__block_2 {
+      padding: 20px 0;
+    }
+
+    &__links_block {
+      margin: 0;
+    }
+
+    &__link {
+      font-size: 10px;
+      line-height: 14px;
+    }
+
+    &__link_title {
+      font-size: 16px;
+    }
+
+    &__olink {
+      display: flex;
+      text-decoration: none;
+      margin-bottom: 6px;
+    }
+
+    &__media {
+      position: absolute;
+      left: calc(50% - 60px);
+      right: calc(50% - 90px);
+      bottom: 95px;
+    }
+
+    &__pay {
+      display: none;
+    }
+
+    &__text {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    &__logo {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    &__logo_image {
+      margin-top: 20px;
+    }
+
+    .footer__organizer_text {
+      margin-left: 10px;
+      font-size: 10px;
+      line-height: 14px;
+    }
+
+    #trading_chat_room,
+    #education,
+    #our_programs_title {
+      display: none;
+    }
+
+    #courses,
+    #services,
+    #organizer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #our_programs_mobile_title {
+      display: inline-block;
+    }
+  }
+}

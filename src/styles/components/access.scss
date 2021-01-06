@@ -1,0 +1,125 @@
+.access {
+  display: none;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+
+  &__wrapper {
+    padding: 45px 35px 40px;
+    margin-bottom: 40px;
+
+    width: 996px;
+    background-color: white;
+    box-shadow: 0 4px 90px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+
+  &__wrapper_title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 19px;
+    margin-top: 10px;
+    width: 171px;
+    height: 50px;
+    color: white;
+    text-decoration: none;
+    background: #ff844f;
+    border: 2px solid #ff844f;
+    border-radius: 5px;
+  }
+
+  &__link_name {
+    color: #898989;
+    font-weight: 500;
+  }
+
+  &__link_group {
+    display: flex;
+  }
+
+  &__links_block_1 {
+    border-right: 1px solid #898989;
+    margin-right: 20px;
+  }
+
+  &__load_group {
+    display: flex;
+
+  }
+
+  &__quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+    margin-bottom: 330px;
+    width: 996px;
+    color: white;
+    border: 2px solid white;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+
+  &__quiz_title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &__quiz_text {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+  }
+
+  &__quiz_button {
+    padding: 13px 38px;
+    background-color: inherit;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+  }
+
+  &__quiz_button:hover {
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 1140px) {
+    transform: none;
+
+    &__wrapper {
+      display: none;
+    }
+
+    &__quiz {
+      margin-bottom: 0;
+      align-items: center;
+      width: auto;
+      padding: 0;
+      border: none;
+    }
+
+    &__quiz_title {
+      text-align: center;
+    }
+
+    &__quiz_text {
+      text-align: center;
+    }
+
+    &__quiz_button {
+      margin-bottom: 20px;
+    }
+  }
+}
